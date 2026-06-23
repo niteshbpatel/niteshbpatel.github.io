@@ -5,271 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitesh B Patel | Tax Consultant & Accounting Services</title>
     <style>
-        :root {
-            --primary: #1a365d;
-            --secondary: #2b6cb0;
-            --accent: #dd6b20;
-            --text: #2d3748;
-            --bg-light: #f7fafc;
-        }
-        
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            color: var(--text); 
-            line-height: 1.6; 
-            background-color: #ffffff; 
-        }
-
-        /* Modern Corporate Header & Navigation */
-        header { 
-            background-color: var(--primary); 
-            color: white; 
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo {
-            font-size: 1.5em;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            font-size: 0.95em;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Premium Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(26,54,93,0.95) 0%, rgba(43,108,176,0.9) 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .hero-content { max-width: 800px; margin: auto; }
-        .hero h2 { font-size: 2.5em; margin: 0 0 20px 0; font-weight: 700; }
-        .hero p { font-size: 1.2em; color: #e2e8f0; margin-bottom: 30px; font-weight: 300; }
-
-        /* Main Container */
+        :root { --primary: #1a365d; --secondary: #2b6cb0; --accent: #dd6b20; --text: #2d3748; --bg-light: #f7fafc; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text); line-height: 1.6; }
+        header { background-color: var(--primary); color: white; padding: 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5em; font-weight: 700; }
+        .nav-links a { color: #e2e8f0; text-decoration: none; margin-left: 20px; }
+        .hero { background: linear-gradient(135deg, rgba(26,54,93,0.95) 0%, rgba(43,108,176,0.9) 100%); color: white; padding: 60px 20px; text-align: center; }
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        
-        .section-title {
-            text-align: center;
-            color: var(--primary);
-            font-size: 2em;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Split Trust Blocks (Like Support & Security) */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        .trust-box {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            border-top: 4px solid var(--secondary);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-        .trust-box h3 { color: var(--primary); margin-top: 0; font-size: 1.3em; }
-
-        /* Service Categories (Individual vs Business) */
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        @media (max-width: 600px) { .category-grid { grid-template-columns: 1fr; } }
-        
-        .category-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 35px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .category-card h3 { 
-            color: var(--primary); 
-            font-size: 1.4em; 
-            margin-top: 0; 
-            border-bottom: 2px solid var(--bg-light);
-            padding-bottom: 15px;
-        }
-        .service-list-item {
-            margin-bottom: 15px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .service-list-item::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Combined Contact Panel */
-        .contact-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            background: #1a365d;
-            color: white;
-            padding: 40px;
-            border-radius: 12px;
-            margin-top: 40px;
-        }
-        .contact-info h3, .action-box h3 { color: white; margin-top: 0; font-size: 1.5em; }
-        .info-link { color: #cbd5e0; text-decoration: none; display: block; margin-bottom: 15px; font-size: 1.05em; }
-        .info-link strong { color: white; display: block; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px;}
-        .info-link a { color: #63b3ed; text-decoration: none; font-weight: 600; }
-
-        /* Buttons layout */
-        .btn { 
-            display: block; 
-            text-align: center; 
-            color: white; 
-            padding: 14px 20px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-weight: bold; 
-            font-size: 1.05em; 
-            transition: transform 0.2s, background 0.2s; 
-            margin-bottom: 15px;
-        }
-        .btn:hover { transform: translateY(-2px); }
+        .section-title { text-align: center; color: var(--primary); margin-bottom: 40px; }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .trust-box { background: var(--bg-light); padding: 30px; border-radius: 8px; text-align: center; border-top: 4px solid var(--secondary); }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .category-card { background: white; border: 1px solid #e2e8f0; padding: 30px; border-radius: 8px; }
+        .service-list-item { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        .service-list-item::before { content: "✓"; position: absolute; left: 0; color: var(--accent); }
+        .contact-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; background: #1a365d; color: white; padding: 40px; border-radius: 12px; }
+        .info-link { color: #cbd5e0; text-decoration: none; display: block; margin-bottom: 15px; }
+        .info-link a { color: #63b3ed; text-decoration: none; }
+        .btn { display: block; text-align: center; color: white; padding: 12px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-bottom: 10px; }
         .btn-email { background: var(--accent); }
-        .btn-email:hover { background: #c05621; }
         .btn-whatsapp { background: #25D366; }
-        .btn-whatsapp:hover { background: #128C7E; }
-        
-        .qr-block {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            display: inline-block;
-            margin-top: 15px;
-        }
-        .qr-block img { max-width: 120px; height: auto; display: block; margin: 5px auto 0 auto; }
-        .qr-block p { margin: 0; color: #333; font-size: 0.8em; font-weight: bold; }
-
-        /* Legal Disclaimer Section */
-        .disclaimer-box { 
-            background: var(--bg-light); 
-            border: 1px solid #e2e8f0; 
-            padding: 20px; 
-            font-size: 0.82em; 
-            color: #718096; 
-            border-radius: 6px; 
-            margin-top: 60px; 
-            text-align: justify; 
-        }
-
-        footer { 
-            background: #0f172a; 
-            color: #94a3b8; 
-            text-align: center; 
-            padding: 25px; 
-            font-size: 0.9em; 
-            margin-top: 40px; 
-        }
+        .qr-block { background: white; padding: 15px; border-radius: 8px; text-align: center; margin-top: 15px; }
+        .qr-block img { max-width: 120px; }
+        .disclaimer-box { background: var(--bg-light); padding: 20px; font-size: 0.85em; color: #718096; border-radius: 6px; margin-top: 40px; }
+        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
 </head>
 <body>
-
-    <!-- Professional Firm Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">NITESH B PATEL</div>
-            <nav class="nav-links">
-                <a href="#services">Our Services</a>
-                <a href="#contact">Get In Touch</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Modern Corporate Hero Header -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Professional Tax & Compliance Architecture</h2>
-            <p>Providing financial clarity, strict legal compliance, and strategic tax mitigation blueprints for individuals and enterprises served out of Vadodara.</p>
-        </div>
-    </section>
-
+    <header><div class="nav-container"><div class="logo">NITESH B PATEL</div><nav class="nav-links"><a href="#services">Services</a><a href="#contact">Contact</a></nav></div></header>
+    <section class="hero"><h2>Professional Tax & Compliance Architecture</h2><p>Strategic tax mitigation for individuals and enterprises in Vadodara.</p></section>
     <div class="container">
-        
-        <!-- High Trust Brand Blocks -->
-        <div class="trust-grid">
-            <div class="trust-box">
-                <h3>💼 Professionalism You Rely On</h3>
-                <p>We provide comprehensive advisory frameworks to legally minimize tax exposure and anchor long-term commercial assets safely.</p>
-            </div>
-            <div class="trust-box">
-                <h3>🔒 Confidentiality You Trust</h3>
-                <p>Data privacy is central to our tax office. All underlying documentation, ledgers, and communication arrays remain strictly locked and secure.</p>
-            </div>
-            <div class="trust-box">
-                <h3>⚡ Support You Deserve</h3>
-                <p>Achieve direct responsiveness with personalized file-tracking, deadline warnings, and dedicated consultation pipelines.</p>
-            </div>
-        </div>
-
-        <!-- Segmented Structured Services Section -->
-        <h2 id="services" class="section-title">Comprehensive Firm Services</h2>
-        
+        <div class="trust-grid"><div class="trust-box"><h3>Professionalism</h3><p>Comprehensive advisory for legal tax minimization.</p></div><div class="trust-box"><h3>Confidentiality</h3><p>Your data remains secured and private.</p></div><div class="trust-box"><h3>Support</h3><p>Dedicated consultation pipelines.</p></div></div>
+        <h2 id="services" class="section-title">Core Services</h2>
         <div class="category-grid">
-            <!-- Services for Individuals Block -->
-            <div class="category-card">
-                <h3>👤 Services for Individuals</h3>
-                <div class="service-list-item">
-                    <strong>Income Tax Return (ITR) Filing:</strong> Total optimization and filing across salary, investments, and capital gains.
-                </div>
-                <div class="service-list-item">
-                    <strong>HUF Tax Structuring:</strong> Specialized legal planning designed for Hindu Undivided Family asset groupings.
-                </div>
-                <div class="service-list-item">
-                    <strong>Personal Tax Planning:</strong> Strategic adjustments to legally shield your wealth under changing legal frameworks.
-                </div>
-            </div>
-
-            <!-- Business Services Block -->
-            <div class="category-card">
-                <h3>🏬 Corporate & Business Services</h3>
-                <div class="service-list-item">
-                    <strong>GST Compliance & Returns:</strong> Complete handling of GST system registrations, GSTR file updates, and ledger audits.
-                </div>
-                <div class="service-list-item">
-                    <strong>Business Advisory Layouts:</strong> Clear financial consulting to assist firm creation, accounting audits, and ledger balance.
-                </div>
-                <div class="service-list-item">
+            <div class="category-card"><h3>Individuals</h3><div class="service-list-item">ITR Filing & Tax Planning</div><div class="service-list-item">HUF Tax Structuring</div></div>
+            <div class="category-card"><h3>Businesses</h3><div class="service-list-item">GST Compliance & Returns</div><div class="service-list-item">Audit Assistance</div></div>
+        </div>
+        <h2 id="contact" class="section-title">Contact Hub</h2>
+        <div class="contact-section">
+            <div class="contact-info"><h3>Info</h3><div class="info-link">TF-42, Earth Icon, New VIP Road, Vadodara.</div><div class="info-link"><a href="tel:+916355759944">+91 63557 59944</a></div><div class="info-link"><a href="mailto:niteshpatel.taxconsultant@gmail.com">Email Us</a></div></div>
+            <div class="action-box"><h3>Action</h3><a href="mailto:niteshpatel.taxconsultant@gmail.com" class="btn btn-email">Email</a><a href="https://wa.me" class="btn btn-whatsapp">WhatsApp</a><div class="qr-block"><img src="https://qrserver.com" alt="QR Code"></div></div>
+        </div>
+        <div class="disclaimer-box"><strong>Disclaimer:</strong> Content for informational purposes only; does not constitute a client relationship. Consult for specific advice.</div>
+    </div>
+    <footer><p>&copy; 2026 NITESH B PATEL. All rights reserved.</p></footer>
+</body>
+</html>
